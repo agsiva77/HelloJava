@@ -1,3 +1,5 @@
+package io.github.agsiva77.hellojava;
+
 public class ServiceRequest {
     private final int id;
     private final int daysOpen;

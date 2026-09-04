@@ -1,3 +1,6 @@
+package io.github.agsiva77.hellojava;
+
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -8,20 +11,20 @@ class ServiceRequestTest {
     @Test
     void urgentRequestHasHighPriority() {
         ServiceRequest request = new ServiceRequest(201, 1, true);
-        assertEquals(Priority.HIGH, request.determinePriority());
+        Assertions.assertEquals(Priority.HIGH, request.determinePriority());
     }
 
     @Test
     void nonUrgentRequestHasLowPriority() {
         ServiceRequest request = new ServiceRequest(202, 1, false);
-        assertEquals(Priority.LOW, request.determinePriority());
+        Assertions.assertEquals(Priority.LOW, request.determinePriority());
     }
 
     @Test
     void negativeDaysOpenIsRejected() {
 //        assertThrows(
 //                IllegalArgumentException.class,
-//                () -> new ServiceRequest(202, -1, false)
+//                () -> new io.github.agsiva77.hellojava.ServiceRequest(202, -1, false)
 //        );
 //        ...or you can capture the exception and assert its message...
 //

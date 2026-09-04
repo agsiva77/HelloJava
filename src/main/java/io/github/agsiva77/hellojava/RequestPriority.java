@@ -1,3 +1,5 @@
+package io.github.agsiva77.hellojava;
+
 import java.util.List;
 
 public class RequestPriority {
