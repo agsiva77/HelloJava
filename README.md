@@ -1,3 +1,3 @@
 # Java Core Practice
 
-Small Java exercises created while transitioning from C#/.NET toward Quarkus development.
+Small Java 21 exercises created while transitioning from C#/.NET toward Quarkus development.
