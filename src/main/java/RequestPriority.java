@@ -16,11 +16,6 @@ public class RequestPriority {
             );
         }
 
-//        printRequest(request1);
-//        printRequest(request2);
-//        printRequest(request3);
-//        printRequest(request4);
-
         long highPriorityCount = requests.stream()
                 .filter(request -> request.determinePriority() == Priority.HIGH)
                 .count();
@@ -31,15 +26,5 @@ public class RequestPriority {
         } catch (IllegalArgumentException ex) {
             System.out.println("Invalid request rejected: " + ex.getMessage());
         }
-    }
-
-
-    private static void printRequest(ServiceRequest request) {
-        System.out.println(
-                "Request " + request.getId()
-                        + " | days open: " + request.getDaysOpen()
-                        + " | urgent: " + request.isUrgent()
-                        + " | priority: " + request.determinePriority()
-        );
     }
 }
