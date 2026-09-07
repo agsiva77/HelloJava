@@ -23,6 +23,25 @@ public class RequestPriority {
                 .count();
         System.out.println("Number of high priority requests: " + highPriorityCount);
 
+        List<RequestSummary> summaries = requests.stream()
+                .map(request -> new RequestSummary(
+                                request.getId(),
+                                request.determinePriority()
+                ))
+//                .collect(Collectors.toList());
+                .toList();
+//        summaries.forEach(summary -> System.out.println("Summary: " + summary));
+
+        for (RequestSummary summary : summaries) {
+            System.out.println(
+                    "Request " + summary.id()
+                            + " has priority: " + summary.priority()
+            );
+//            if (summary.priority() == Priority.HIGH) {
+//                System.out.println("High priority request summary: " + summary);
+//            }
+        }
+
         try {
             new ServiceRequest(105, -1, false);
         } catch (IllegalArgumentException ex) {
