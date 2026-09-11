@@ -42,4 +42,8 @@ public class ServiceRequest {
 
         return Priority.LOW;
     }
+
+    public ServiceRequest get() {
+        return this;
+    }
 }
